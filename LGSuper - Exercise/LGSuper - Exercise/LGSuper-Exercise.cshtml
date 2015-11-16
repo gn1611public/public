@@ -1,0 +1,56 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>LGsuper - exercise</title>
+    <link rel="stylesheet" href="~/jquery-ui/all.css">
+    <style>
+        #draggable-red {
+            width: 114px;
+            height: 114px;
+            cursor: move;
+            background: url(resources/red.png) no-repeat;
+        }
+
+        #draggable-yellow {
+            width: 114px;
+            height: 114px;
+            cursor: move;
+            top: 20px;
+            background: url(resources/yellow.png) no-repeat;
+        }
+
+        #droppable {
+            position: absolute;
+            right: 100px;
+            top: 120px;
+            width: 525px;
+            height: 525px;
+            background: url('resources/Connect 4 - clear.png') no-repeat;
+            color: #fff;
+            padding: 10px;
+        }
+    </style>
+    <script src="~/jquery-ui/jquery-2.0.3.js"></script>
+    <script src="~/jquery-ui/core.js"></script>
+    <script src="~/jquery-ui/widget.js"></script>
+    <script src="~/jquery-ui/mouse.js"></script>
+    <script src="~/jquery-ui/draggable.js"></script>
+    <script src="~/jquery-ui/droppable.js"></script>
+</head>
+<body>
+    <div id="droppable"></div>
+    <div id="draggable-red"></div>
+    <div id="draggable-yellow"></div>
+    <script>
+    $("#draggable-red").draggable();
+    $("#draggable-yellow").draggable();
+    $( "#droppable" ).droppable({
+      drop: function() {
+        alert( "Dropped!" );
+      }
+    });
+    </script>
+
+</body>
+</html>
